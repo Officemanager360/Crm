@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM - Office Management 360</title>
+    <style>
+        :root {
+            --primary: #2C3E50;
+            --secondary: #18BC9C;
+            --bg-color: #F4F6F9;
+            --text-color: #333;
+            --sidebar-width: 250px;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        /* Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar-header {
+            padding: 20px;
+            text-align: center;
+            background-color: #1a252f;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-bottom: 2px solid var(--secondary);
+        }
+        .nav-btn {
+            padding: 15px 20px;
+            background: none;
+            border: none;
+            color: white;
+            text-align: left;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .nav-btn:hover, .nav-btn.active {
+            background-color: var(--secondary);
+        }
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+        .section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .section.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h2 { border-bottom: 2px solid var(--secondary); padding-bottom: 10px; }
+        
+        /* Cards & Forms */
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input, select {
+            width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;
+        }
+        button.btn-submit {
+            background-color: var(--secondary); color: white; border: none; padding: 10px 15px;
+            border-radius: 4px; cursor: pointer; font-size: 1rem;
+        }
+        button.btn-submit:hover { background-color: #128f76; }
+        
+        /* Tables */
+        table {
+            width: 100%; border-collapse: collapse; margin-top: 15px;
+        }
+        th, td {
+            padding: 12px; text-align: left; border-bottom: 1px solid #ddd;
+        }
+        th { background-color: var(--primary); color: white; }
+        
+        /* Dashboard Stats */
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;
+        }
+        .stat-card {
+            background: white; padding: 20px; border-radius: 8px; text-align: center;
+            border-left: 5px solid var(--secondary); box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .stat-number { font-size: 2rem; font-weight: bold; color: var(--primary); }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            Groupe Ihsane - CRM
+        </div>
+        <button class="nav-btn active" onclick="showSection('dashboard')">📊 Tableau de bord</button>
+        <button class="nav-btn" onclick="showSection('clients')">🤝 Clients & Prospection</button>
+        <button class="nav-btn" onclick="showSection('missions')">📋 Missions 360°</button>
+        <button class="nav-btn" onclick="showSection('rh')">👥 Support RH</button>
+    </div>
+
+    <div class="main-content">
+        
+        <div id="dashboard" class="section active">
+            <h2>Vue d'ensemble</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div>Clients Actifs</div>
+                    <div class="stat-number" id="stat-clients">0</div>
+                </div>
+                <div class="stat-card">
+                    <div>Missions en cours</div>
+                    <div class="stat-number" id="stat-missions">0</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="clients" class="section">
+            <h2>Gestion des Clients</h2>
+            <div class="card">
+                <h3>Ajouter un nouveau client</h3>
+                <div class="form-group">
+                    <label>Nom de l'entreprise ou du client</label>
+                    <input type="text" id="client-name" placeholder="Ex: Cabinet ABC">
+                </div>
+                <div class="form-group">
+                    <label>Contact (Email / Téléphone)</label>
+                    <input type="text" id="client-contact" placeholder="contact@entreprise.com">
+                </div>
+                <button class="btn-submit" onclick="addClient()">Enregistrer le client</button>
+            </div>
+            <div class="card">
+                <h3>Liste des Clients</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Contact</th>
+                            <th>Date d'ajout</th>
+                        </tr>
+                    </thead>
+                    <tbody id="client-list">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="missions" class="section">
+            <h2>Suivi des Missions</h2>
+            <div class="card">
+                <h3>Nouvelle Mission</h3>
+                <div class="form-group">
+                    <label>Type de service</label>
+                    <select id="mission-type">
+                        <option value="Administration">Administration & Front Office</option>
+                        <option value="Support RH">Support RH & Personnel</option>
+                        <option value="Comptabilité">Comptabilité de base</option>
+                        <option value="Moyens Généraux">Moyens Généraux</option>
+                        <option value="Événementiel">Communication & Événementiel</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Description de la tâche</label>
+                    <input type="text" id="mission-desc" placeholder="Ex: Organisation du séminaire annuel">
+                </div>
+                <button class="btn-submit" onclick="addMission()">Ajouter la mission</button>
+            </div>
+            <div class="card">
+                <h3>Missions en cours</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Description</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mission-list">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div id="rh" class="section">
+            <h2>Support RH & Administration du personnel</h2>
+            <div class="card">
+                <p><i>Espace de travail réservé pour vos missions de gestion contractuelle, pointages, et conformité légale pour le compte de vos clients.</i></p>
+                <p>En tant que HRBP, vous pourrez centraliser ici les dossiers d'audit ou les suivis d'employés de vos clients.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Navigation entre les onglets
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(sectionId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        // Initialisation des données (Sauvegarde dans le navigateur)
+        let clients = JSON.parse(localStorage.getItem('crm_clients')) || [];
+        let missions = JSON.parse(localStorage.getItem('crm_missions')) || [];
+
+        // Fonction pour ajouter un client
+        function addClient() {
+            const name = document.getElementById('client-name').value;
+            const contact = document.getElementById('client-contact').value;
+            
+            if(name === '') { alert('Veuillez entrer un nom de client'); return; }
+            
+            const date = new Date().toLocaleDateString('fr-FR');
+            clients.push({ name, contact, date });
+            localStorage.setItem('crm_clients', JSON.stringify(clients));
+            
+            document.getElementById('client-name').value = '';
+            document.getElementById('client-contact').value = '';
+            
+            renderData();
+        }
+
+        // Fonction pour ajouter une mission
+        function addMission() {
+            const type = document.getElementById('mission-type').value;
+            const desc = document.getElementById('mission-desc').value;
+            
+            if(desc === '') { alert('Veuillez décrire la mission'); return; }
+            
+            missions.push({ type, desc, status: 'En cours' });
+            localStorage.setItem('crm_missions', JSON.stringify(missions));
+            
+            document.getElementById('mission-desc').value = '';
+            
+            renderData();
+        }
+
+        // Fonction pour afficher les données dans les tableaux
+        function renderData() {
+            // Mettre à jour les statistiques
+            document.getElementById('stat-clients').innerText = clients.length;
+            document.getElementById('stat-missions').innerText = missions.length;
+
+            // Afficher les clients
+            const clientTbody = document.getElementById('client-list');
+            clientTbody.innerHTML = '';
+            clients.forEach(c => {
+                clientTbody.innerHTML += `<tr><td>${c.name}</td><td>${c.contact}</td><td>${c.date}</td></tr>`;
+            });
+
+            // Afficher les missions
+            const missionTbody = document.getElementById('mission-list');
+            missionTbody.innerHTML = '';
+            missions.forEach(m => {
+                let badgeColor = m.type === 'Support RH' ? '#e74c3c' : '#3498db';
+                missionTbody.innerHTML += `
+                    <tr>
+                        <td><span style="background:${badgeColor};color:white;padding:3px 8px;border-radius:12px;font-size:0.8rem;">${m.type}</span></td>
+                        <td>${m.desc}</td>
+                        <td>⏳ ${m.status}</td>
+                    </tr>`;
+            });
+        }
+
+        // Charger les données au démarrage de la page
+        window.onload = renderData;
+    </script>
+</body>
+</html>
