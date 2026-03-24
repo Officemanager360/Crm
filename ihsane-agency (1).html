@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="IHSANE AGENCY – Cabinet RH & Coaching à Abidjan. Support RH pour TPE/PME, rédaction de CV, coaching carrière, recrutement et création de site vitrine en Côte d'Ivoire.">
+<meta name="keywords" content="support RH Abidjan, cabinet RH Côte d'Ivoire, coaching carrière Abidjan, rédaction CV Abidjan, recrutement PME, site vitrine Abidjan, IHSANE AGENCY, consultant RH indépendant, recherche emploi Côte d'Ivoire">
+<meta property="og:title" content="IHSANE AGENCY – Votre RH & Coach Carrière à Abidjan">
+<meta property="og:description" content="TPE/PME : externalisez votre RH. Candidats : boostez votre carrière. IHSANE AGENCY, votre partenaire à Abidjan.">
+<title>IHSANE AGENCY | Support RH & Coaching Carrière à Abidjan – Côte d'Ivoire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --noir:#0e0e12;--charcoal:#1c1c24;
+  --or:#c4a35a;--or-clair:#dfc080;
+  --blanc:#fafaf8;--gris-clair:#f4f2ed;--gris-mid:#b8b5ae;--gris-texte:#6b6860;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',system-ui,sans-serif;
+  --tr:0.35s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);background:var(--blanc);color:var(--charcoal);line-height:1.7;overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5%;background:rgba(14,14,18,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(196,163,90,.12)}
+.nav-logo{font-family:var(--serif);font-size:1.4rem;font-weight:500;color:var(--blanc);letter-spacing:.04em;text-decoration:none}
+.nav-logo span{color:var(--or)}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gris-mid);text-decoration:none;transition:color var(--tr)}
+.nav-links a:hover{color:var(--or)}
+.nav-cta{padding:.45rem 1.3rem;border:1px solid var(--or);color:var(--or)!important;transition:all var(--tr)!important}
+.nav-cta:hover{background:var(--or)!important;color:var(--noir)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:1px;background:var(--blanc)}
+.mob{display:none;position:fixed;inset:0;background:var(--noir);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mob.open{display:flex}
+.mob a{font-family:var(--serif);font-size:1.8rem;color:var(--blanc);text-decoration:none;transition:color var(--tr)}
+.mob a:hover{color:var(--or)}
+.mob-close{position:absolute;top:1.5rem;right:5%;font-size:1.5rem;color:var(--gris-mid);cursor:pointer;background:none;border:none}
+
+#hero{min-height:100vh;background:var(--noir);display:flex;align-items:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(196,163,90,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(196,163,90,.04) 1px,transparent 1px);background-size:60px 60px}
+.hero-glow{position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(196,163,90,.08) 0%,transparent 70%);pointer-events:none}
+.hero-glow2{position:absolute;bottom:-150px;left:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(196,163,90,.05) 0%,transparent 70%);pointer-events:none}
+.hero-wrap{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 5%;padding-top:7rem;padding-bottom:4rem}
+.hero-ov{font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--or);font-weight:500;margin-bottom:1.4rem;display:flex;align-items:center;gap:1rem}
+.hero-ov::before{content:'';display:block;width:38px;height:1px;background:var(--or)}
+.hero-h1{font-family:var(--serif);font-size:clamp(2.7rem,6.5vw,5.8rem);font-weight:300;line-height:1.07;color:var(--blanc);margin-bottom:1.6rem;letter-spacing:-.01em}
+.hero-h1 em{font-style:italic;color:var(--or)}
+.hero-sub{font-size:.97rem;color:var(--gris-mid);max-width:550px;font-weight:300;line-height:1.85;margin-bottom:2.2rem}
+.hero-pills{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2.2rem}
+.pill{padding:.3rem .9rem;border:1px solid rgba(196,163,90,.22);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--or-clair);font-weight:400}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-gold{padding:.8rem 2.2rem;background:var(--or);color:var(--noir);font-family:var(--sans);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;text-decoration:none;border:1px solid var(--or);transition:all var(--tr);display:inline-block}
+.btn-gold:hover{background:transparent;color:var(--or)}
+.btn-ghost{padding:.8rem 2.2rem;background:transparent;color:var(--blanc);font-family:var(--sans);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;font-weight:400;text-decoration:none;border:1px solid rgba(255,255,255,.18);transition:all var(--tr);display:inline-block}
+.btn-ghost:hover{border-color:var(--or);color:var(--or)}
+.hero-stats{display:flex;gap:2.5rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid rgba(196,163,90,.14);flex-wrap:wrap}
+.stat-n{font-family:var(--serif);font-size:2.2rem;font-weight:300;color:var(--or);line-height:1}
+.stat-l{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gris-mid);margin-top:.3rem}
+
+.band{background:var(--charcoal);padding:.85rem 5%;text-align:center;border-top:1px solid rgba(196,163,90,.1);border-bottom:1px solid rgba(196,163,90,.1)}
+.band p{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris-mid);max-width:1200px;margin:0 auto}
+.band strong{color:var(--or-clair)}
+
+section{padding:6rem 5%}
+.s-inner{max-width:1200px;margin:0 auto}
+.ov{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--or);font-weight:500;margin-bottom:.85rem;display:flex;align-items:center;gap:.7rem}
+.ov::before{content:'';display:block;width:26px;height:1px;background:var(--or)}
+.st{font-family:var(--serif);font-size:clamp(1.85rem,3.5vw,2.9rem);font-weight:300;line-height:1.2;color:var(--charcoal);margin-bottom:1rem}
+.st em{font-style:italic;color:var(--or)}
+.stl{color:var(--blanc)}
+.sl{font-size:.92rem;color:var(--gris-texte);max-width:560px;line-height:1.9;font-weight:300}
+.sll{color:var(--gris-mid)}
+
+#apropos{background:var(--gris-clair)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3.5rem}
+.about-vis{position:relative;aspect-ratio:4/5;background:var(--charcoal);overflow:hidden}
+.av-in{position:absolute;inset:0;background-image:linear-gradient(rgba(196,163,90,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(196,163,90,.06) 1px,transparent 1px);background-size:40px 40px}
+.av-c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}
+.av-big{font-family:var(--serif);font-size:7rem;font-weight:300;color:rgba(196,163,90,.12);line-height:1;margin-bottom:1rem}
+.av-tag{font-family:var(--serif);font-size:1.2rem;font-weight:300;color:rgba(250,250,248,.45);font-style:italic;line-height:1.4}
+.av-badge{position:absolute;bottom:2rem;right:-1.5rem;background:var(--or);color:var(--noir);padding:1.2rem;font-family:var(--serif);font-size:.95rem;font-weight:600;line-height:1.2;min-width:140px;text-align:center}
+.av-badge small{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;margin-bottom:.3rem;opacity:.7}
+.about-txt p{font-size:.92rem;color:var(--gris-texte);line-height:1.95;margin-bottom:1.3rem;font-weight:300}
+.about-vals{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-top:1.75rem}
+.val{padding:1rem;border-left:2px solid var(--or);background:var(--blanc)}
+.val-t{font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--charcoal);margin-bottom:.22rem}
+.val-d{font-size:.78rem;color:var(--gris-texte);line-height:1.6}
+
+#cibles{background:var(--blanc)}
+.cibles-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(196,163,90,.1);margin-top:3rem}
+.cible{padding:3rem;position:relative;overflow:hidden}
+.cible.dark{background:var(--charcoal)}
+.cible.light{background:var(--gris-clair)}
+.chip{display:inline-block;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;padding:.28rem .85rem;background:var(--or);color:var(--noir);font-weight:700;margin-bottom:1.4rem}
+.cible-t{font-family:var(--serif);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:300;line-height:1.25;margin-bottom:.9rem}
+.cible.dark .cible-t{color:var(--blanc)}
+.cible.light .cible-t{color:var(--charcoal)}
+.cible-d{font-size:.86rem;line-height:1.9;font-weight:300;margin-bottom:1.5rem}
+.cible.dark .cible-d{color:var(--gris-mid)}
+.cible.light .cible-d{color:var(--gris-texte)}
+.cible-list{list-style:none}
+.cible-list li{font-size:.8rem;padding:.38rem 0;border-bottom:1px solid rgba(196,163,90,.1);display:flex;align-items:center;gap:.65rem}
+.cible.dark .cible-list li{color:var(--gris-mid)}
+.cible.light .cible-list li{color:var(--gris-texte)}
+.cible-list li::before{content:'→';color:var(--or);font-size:.72rem;flex-shrink:0}
+
+#services{background:var(--blanc)}
+.srv-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.5rem;flex-wrap:wrap;gap:2rem}
+.srv-tabs{display:flex;gap:0;border-bottom:1px solid rgba(196,163,90,.16);margin-bottom:2.5rem;overflow-x:auto}
+.srv-tab{padding:.8rem 1.4rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--gris-texte);background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all var(--tr);white-space:nowrap;flex-shrink:0;font-family:var(--sans)}
+.srv-tab:hover{color:var(--charcoal)}
+.srv-tab.active{color:var(--or);border-bottom-color:var(--or)}
+.srv-panel{display:none}
+.srv-panel.active{display:block}
+.panel-intro{display:grid;grid-template-columns:80px 1fr;gap:2.5rem;align-items:start;margin-bottom:2.5rem;padding:2rem;background:var(--gris-clair);border-left:3px solid var(--or)}
+.p-icon{font-size:2.8rem;line-height:1}
+.p-title{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:.65rem}
+.p-desc{font-size:.88rem;color:var(--gris-texte);line-height:1.9;font-weight:300;margin-bottom:1rem}
+.p-inc{list-style:none}
+.p-inc li{font-size:.8rem;color:var(--gris-texte);margin-bottom:.3rem;padding-left:1rem;position:relative}
+.p-inc li::before{content:'→';position:absolute;left:0;color:var(--or);font-size:.72rem}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.plan{border:1px solid rgba(196,163,90,.16);padding:1.85rem 1.6rem;position:relative;transition:all var(--tr);background:var(--blanc)}
+.plan:hover{border-color:var(--or);transform:translateY(-3px)}
+.plan.feat{border:2px solid var(--or);background:var(--charcoal)}
+.plan-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--or);color:var(--noir);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:.28rem .9rem;font-weight:700;white-space:nowrap}
+.pn{font-size:.65rem;letter-spacing:.17em;text-transform:uppercase;color:var(--or);font-weight:600;margin-bottom:.55rem}
+.plan.feat .pn{color:var(--or-clair)}
+.pp{font-family:var(--serif);font-size:2.2rem;font-weight:300;line-height:1;color:var(--charcoal);margin-bottom:.2rem}
+.plan.feat .pp{color:var(--blanc)}
+.pp-per{font-size:.7rem;color:var(--gris-texte);margin-bottom:1.4rem;font-weight:300}
+.plan.feat .pp-per{color:var(--gris-mid)}
+.pf{list-style:none;margin-bottom:1.6rem}
+.pf li{font-size:.8rem;color:var(--gris-texte);padding:.4rem 0;border-bottom:1px solid rgba(196,163,90,.09);display:flex;align-items:flex-start;gap:.55rem;line-height:1.5}
+.plan.feat .pf li{color:var(--gris-mid);border-bottom-color:rgba(196,163,90,.14)}
+.pf li::before{content:'✓';color:var(--or);font-size:.72rem;flex-shrink:0;margin-top:.14rem;font-weight:700}
+.pf li.no::before{content:'✗';color:var(--gris-mid)}
+.pf li.no{color:rgba(107,104,96,.45)!important}
+.btn-p{display:block;text-align:center;padding:.7rem;border:1px solid var(--or);color:var(--or);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;text-decoration:none;background:transparent;cursor:pointer;transition:all var(--tr);width:100%;font-family:var(--sans)}
+.btn-p:hover{background:var(--or);color:var(--noir)}
+.plan.feat .btn-p{background:var(--or);color:var(--noir)}
+.plan.feat .btn-p:hover{background:var(--or-clair)}
+
+#approche{background:var(--charcoal)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3.5rem;border:1px solid rgba(196,163,90,.13)}
+.stp{padding:2rem 1.6rem;border-right:1px solid rgba(196,163,90,.13);position:relative;transition:background var(--tr)}
+.stp:last-child{border-right:none}
+.stp:hover{background:rgba(196,163,90,.03)}
+.stp-n{font-family:var(--serif);font-size:2.7rem;font-weight:300;color:rgba(196,163,90,.17);line-height:1;margin-bottom:1.1rem}
+.stp-t{font-family:var(--serif);font-size:1.05rem;font-weight:500;color:var(--blanc);margin-bottom:.6rem}
+.stp-d{font-size:.8rem;color:var(--gris-mid);line-height:1.8;font-weight:300}
+.stp-bar{position:absolute;bottom:0;left:1.6rem;right:1.6rem;height:2px;background:var(--or);transform:scaleX(0);transform-origin:left;transition:transform .5s ease}
+.stp:hover .stp-bar{transform:scaleX(1)}
+
+#temoignages{background:var(--gris-clair)}
+.temo-wrap{position:relative;overflow:hidden;margin-top:3.5rem}
+.temo-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.temo-slide{flex-shrink:0;padding-right:1.5rem}
+.temo-card{background:var(--blanc);padding:1.85rem;height:100%}
+.t-stars{color:var(--or);font-size:.7rem;letter-spacing:.1em;margin-bottom:.75rem}
+.t-q{font-family:var(--serif);font-size:2.3rem;color:var(--or);line-height:1;margin-bottom:.5rem;font-weight:300}
+.t-txt{font-size:.86rem;color:var(--gris-texte);line-height:1.85;font-style:italic;font-weight:300;margin-bottom:1.3rem}
+.t-auth{display:flex;align-items:center;gap:.85rem;padding-top:.9rem;border-top:1px solid rgba(196,163,90,.16)}
+.t-av{width:36px;height:36px;border-radius:50%;background:var(--charcoal);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:.82rem;color:var(--or);flex-shrink:0}
+.t-name{font-size:.82rem;font-weight:600;color:var(--charcoal)}
+.t-role{font-size:.7rem;color:var(--gris-texte);margin-top:.08rem}
+.t-type{display:inline-block;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;padding:.18rem .55rem;background:rgba(196,163,90,.1);color:var(--or);border:1px solid rgba(196,163,90,.22);margin-top:.3rem}
+.temo-nav{display:flex;align-items:center;justify-content:space-between;margin-top:1.75rem}
+.t-dots{display:flex;gap:.5rem}
+.t-dot{width:7px;height:7px;border-radius:50%;background:rgba(196,163,90,.22);cursor:pointer;transition:all var(--tr);border:none}
+.t-dot.active{background:var(--or);transform:scale(1.25)}
+.t-arrows{display:flex;gap:.65rem}
+.t-btn{width:38px;height:38px;border:1px solid rgba(196,163,90,.28);background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--or);font-size:1rem;transition:all var(--tr)}
+.t-btn:hover{background:var(--or);color:var(--noir)}
+
+#tarifs{background:var(--charcoal)}
+.tarifs-top{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;margin-bottom:3.5rem}
+.tarif-msg{font-size:.9rem;color:var(--gris-mid);line-height:1.9;font-weight:300}
+.tarif-msg strong{color:var(--or-clair);font-weight:500}
+.tc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.tc{padding:1.85rem 1.6rem;border:1px solid rgba(196,163,90,.14);background:rgba(255,255,255,.03);transition:all var(--tr)}
+.tc:hover{border-color:rgba(196,163,90,.4);background:rgba(255,255,255,.05)}
+.tc-from{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris-mid);font-weight:400;margin-bottom:.35rem}
+.tc-price{font-family:var(--serif);font-size:1.9rem;font-weight:300;color:var(--or);line-height:1;margin-bottom:.28rem}
+.tc-name{font-size:.78rem;color:var(--blanc);font-weight:500;margin-bottom:.45rem}
+.tc-desc{font-size:.76rem;color:var(--gris-mid);line-height:1.7;font-weight:300}
+.tc-lnk{display:inline-block;margin-top:.9rem;font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;color:var(--or);text-decoration:none;border-bottom:1px solid rgba(196,163,90,.28);padding-bottom:1px;transition:border-color var(--tr);cursor:pointer;background:none;border-left:none;border-right:none;border-top:none;font-family:var(--sans)}
+.tc-lnk:hover{border-bottom-color:var(--or)}
+
+#contact{background:var(--noir)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:4.5rem;margin-top:3.5rem}
+.c-item{padding:1.3rem 0;border-bottom:1px solid rgba(196,163,90,.09)}
+.c-item:first-child{border-top:1px solid rgba(196,163,90,.09)}
+.c-lbl{font-size:.6rem;letter-spacing:.17em;text-transform:uppercase;color:var(--or);font-weight:500;margin-bottom:.32rem}
+.c-val{font-size:.9rem;color:var(--blanc);font-weight:300}
+.c-val a{color:var(--blanc);text-decoration:none;transition:color var(--tr)}
+.c-val a:hover{color:var(--or)}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fg{margin-bottom:1rem}
+.fg label{display:block;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gris-mid);margin-bottom:.42rem;font-weight:400}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(196,163,90,.16);color:var(--blanc);font-family:var(--sans);font-size:.84rem;padding:.75rem .95rem;outline:none;transition:border-color var(--tr);font-weight:300}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(184,181,174,.32)}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--or)}
+.fg select option{background:var(--charcoal);color:var(--blanc)}
+.fg textarea{resize:vertical;min-height:105px}
+.f-sub{width:100%;padding:.9rem;background:var(--or);color:var(--noir);border:none;font-family:var(--sans);font-size:.73rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;cursor:pointer;transition:all var(--tr);margin-top:.35rem}
+.f-sub:hover{background:var(--or-clair)}
+
+footer{background:var(--noir);border-top:1px solid rgba(196,163,90,.09);padding:2.2rem 5%}
+.ft{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.3rem}
+.ft-logo{font-family:var(--serif);font-size:1.15rem;color:var(--blanc);font-weight:300;letter-spacing:.05em}
+.ft-logo span{color:var(--or)}
+.ft-copy{font-size:.7rem;color:var(--gris-texte);letter-spacing:.04em}
+.ft-links{display:flex;gap:1.5rem;list-style:none}
+.ft-links a{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gris-texte);text-decoration:none;transition:color var(--tr)}
+.ft-links a:hover{color:var(--or)}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+@media(max-width:900px){
+  .nav-links{display:none}.hamburger{display:flex}
+  .about-grid,.cibles-grid,.contact-grid,.tarifs-top,.plans,.steps,.tc-grid{grid-template-columns:1fr}
+  .about-vis{aspect-ratio:3/2}.av-badge{right:1rem}
+  .panel-intro{grid-template-columns:1fr}
+  section{padding:5rem 5%}
+  .f-row{grid-template-columns:1fr}
+  .ft{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:600px){
+  .hero-btns,.hero-stats{flex-direction:column}
+  .hero-stats{gap:1.4rem}
+  .steps{grid-template-columns:1fr 1fr}
+  .about-vals{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo">IHSANE<span>.</span>AGENCY</a>
+  <ul class="nav-links">
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#cibles">Qui on aide</a></li>
+    <li><a href="#services">Services & Tarifs</a></li>
+    <li><a href="#approche">Méthode</a></li>
+    <li><a href="#temoignages">Avis</a></li>
+    <li><a href="#contact" class="nav-cta">Contactez-nous</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mob" id="mob">
+  <button class="mob-close" onclick="toggleMenu()">✕</button>
+  <a href="#apropos" onclick="toggleMenu()">À propos</a>
+  <a href="#cibles" onclick="toggleMenu()">Qui on aide</a>
+  <a href="#services" onclick="toggleMenu()">Services & Tarifs</a>
+  <a href="#approche" onclick="toggleMenu()">Méthode</a>
+  <a href="#temoignages" onclick="toggleMenu()">Avis clients</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-wrap">
+    <div class="hero-ov">Cabinet RH & Coaching Professionnel — Abidjan, Côte d'Ivoire</div>
+    <h1 class="hero-h1">Votre business mérite<br>une <em>RH sérieuse.</em><br>Votre carrière aussi.</h1>
+    <p class="hero-sub">Boutique, salon, PME ou candidat en recherche d'emploi — IHSANE AGENCY accompagne ceux qui veulent avancer sans se perdre dans les complexités des ressources humaines.</p>
+    <div class="hero-pills">
+      <span class="pill">Support RH pour TPE/PME</span>
+      <span class="pill">Recrutement</span>
+      <span class="pill">Coaching carrière</span>
+      <span class="pill">Rédaction CV</span>
+      <span class="pill">Création site vitrine</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#services" class="btn-gold">Voir nos offres & tarifs</a>
+      <a href="#contact" class="btn-ghost">1er échange gratuit</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-n">+80</div><div class="stat-l">Entreprises accompagnées</div></div>
+      <div><div class="stat-n">+300</div><div class="stat-l">Candidats coachés</div></div>
+      <div><div class="stat-n">96%</div><div class="stat-l">Taux de satisfaction</div></div>
+      <div><div class="stat-n">Abidjan</div><div class="stat-l">& disponible à distance</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <p>Petit effectif ne veut pas dire <strong>zéro organisation</strong>. Nous rendons la RH accessible à toutes les structures — petites comme grandes.</p>
+</div>
+
+<section id="apropos">
+  <div class="s-inner">
+    <div class="about-grid">
+      <div class="about-vis reveal">
+        <div class="av-in"></div>
+        <div class="av-c">
+          <div class="av-big">I</div>
+          <div class="av-tag">Intégrité &amp;<br>Impact</div>
+        </div>
+        <div class="av-badge"><small>Basé à</small>Abidjan, CI</div>
+      </div>
+      <div class="about-txt">
+        <div class="ov">Qui sommes-nous</div>
+        <h2 class="st">Un cabinet <em>humain,</em><br>concret et abordable</h2>
+        <p>IHSANE AGENCY, c'est un cabinet de conseil RH et de coaching professionnel pensé pour la réalité du terrain ivoirien. Nous travaillons avec des gérants de boutiques, des salons de beauté, des restaurants, des petites agences — toutes ces structures qui ont besoin d'une vraie organisation humaine mais qui n'ont pas encore les moyens d'un DRH à plein temps.</p>
+        <p>En parallèle, nous accompagnons les candidats en recherche d'emploi, les jeunes diplômés qui veulent bien démarrer, et les professionnels qui cherchent à évoluer. Du CV percutant à l'entretien réussi, nous sommes là à chaque étape.</p>
+        <p>Pas de grands discours. Des actions concrètes, un suivi sérieux, des résultats mesurables.</p>
+        <div class="about-vals reveal">
+          <div class="val"><div class="val-t">Proximité</div><div class="val-d">Nous connaissons le marché local d'Abidjan et les réalités des entreprises ivoiriennes.</div></div>
+          <div class="val"><div class="val-t">Accessibilité</div><div class="val-d">Des tarifs adaptés aux petites structures, sans compromis sur la qualité.</div></div>
+          <div class="val"><div class="val-t">Confidentialité</div><div class="val-d">Chaque mission est traitée avec la plus grande discrétion professionnelle.</div></div>
+          <div class="val"><div class="val-t">Sur-mesure</div><div class="val-d">Aucune solution copiée-collée. Chaque client a sa propre réalité.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cibles">
+  <div class="s-inner">
+    <div class="ov">Nos deux univers</div>
+    <h2 class="st">Que vous soyez entreprise<br>ou particulier, nous avons<br><em>la solution qu'il vous faut</em></h2>
+    <div class="cibles-grid reveal">
+      <div class="cible dark">
+        <span class="chip">B2B — Pour les entreprises</span>
+        <h3 class="cible-t">Votre partenaire RH<br>externalisé</h3>
+        <p class="cible-d">Vous êtes gérant d'une boutique, d'un salon, d'une PME ou d'un commerce ? Vous avez du personnel mais pas de service RH structuré ? Nous devenons votre RH à la carte.</p>
+        <ul class="cible-list">
+          <li>Boutiques &amp; commerces de proximité</li>
+          <li>Salons de beauté &amp; instituts</li>
+          <li>Restaurants &amp; food-business</li>
+          <li>Agences &amp; bureaux de services</li>
+          <li>Petites entreprises en croissance</li>
+          <li>Entrepreneurs &amp; auto-entrepreneurs</li>
+        </ul>
+      </div>
+      <div class="cible light">
+        <span class="chip">B2C — Pour les candidats</span>
+        <h3 class="cible-t">Votre boost vers<br>la carrière idéale</h3>
+        <p class="cible-d">Vous cherchez un emploi, voulez évoluer, changer de secteur ou mieux vous valoriser ? Nous vous donnons les outils, les méthodes et la confiance pour réussir.</p>
+        <ul class="cible-list">
+          <li>Jeunes diplômés en quête de premier emploi</li>
+          <li>Professionnels en reconversion</li>
+          <li>Candidats sans réponse aux candidatures</li>
+          <li>Personnes stressées en entretien</li>
+          <li>Profils qui veulent négocier leur salaire</li>
+          <li>Toute personne souhaitant booster sa carrière</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="s-inner">
+    <div class="srv-hdr">
+      <div>
+        <div class="ov">Nos offres</div>
+        <h2 class="st">Services &amp; <em>Plans tarifaires</em></h2>
+      </div>
+      <p class="sl">Cliquez sur un service pour découvrir ce qu'il inclut et les trois plans disponibles. Tous les prix sont en FCFA et personnalisables.</p>
+    </div>
+    <div class="srv-tabs">
+      <button class="srv-tab active" onclick="showPanel(0)">🏢 Support RH</button>
+      <button class="srv-tab" onclick="showPanel(1)">🎯 Recrutement</button>
+      <button class="srv-tab" onclick="showPanel(2)">📄 CV &amp; LinkedIn</button>
+      <button class="srv-tab" onclick="showPanel(3)">🚀 Coaching Carrière</button>
+      <button class="srv-tab" onclick="showPanel(4)">🎓 Formations</button>
+      <button class="srv-tab" onclick="showPanel(5)">🌐 Site Vitrine</button>
+    </div>
+
+    <div class="srv-panel active" id="panel-0">
+      <div class="panel-intro">
+        <div><div class="p-icon">🏢</div></div>
+        <div>
+          <h3 class="p-title">Support RH Externalisé</h3>
+          <p class="p-desc">Vous externalisez votre fonction RH à IHSANE AGENCY. On s'occupe des contrats, du recrutement ponctuel, du règlement intérieur, de la gestion des absences et des conseils disciplinaires — comme si vous aviez un RH interne, mais à un coût bien plus accessible.</p>
+          <ul class="p-inc">
+            <li>Rédaction et suivi des contrats de travail</li>
+            <li>Conseil sur le Code du Travail ivoirien</li>
+            <li>Gestion administrative du personnel</li>
+            <li>Appui lors de conflits ou de départs</li>
+            <li>Disponibilité téléphone/WhatsApp selon plan</li>
+          </ul>
+        </div>
+      </div>
+      <div class="plans">
+        <div class="plan reveal">
+          <div class="pn">Essentiel</div>
+          <div class="pp">50 000 <small style="font-size:.95rem">FCFA</small></div>
+          <div class="pp-per">/mois – 1 à 5 employés</div>
+          <ul class="pf">
+            <li>1 consultation RH/mois (60 min)</li>
+            <li>Rédaction d'1 contrat par mois</li>
+            <li>Réponses WhatsApp sous 48h</li>
+            <li>Modèles de documents RH</li>
+            <li class="no">Recrutement inclus</li>
+            <li class="no">Règlement intérieur</li>
+          </ul>
+          <button class="btn-p" onclick="scrollContact()">Démarrer</button>
+        </div>
+        <div class="plan feat reveal d2">
+          <span class="plan-badge">Le plus choisi</span>
+          <div class="pn">Business</div>
+          <div class="pp">100 000 <small style="font-size:.95rem">FCFA</small></div>
+          <div class="pp-per">/mois – 5 à 20 employés</div>
+          <ul class="pf">
+            <li>2 consultations RH/mois</li>
+            <li>Jusqu'à 3 contrats/mois</li>
+            <li>Réponses WhatsApp sous 24h</li>
+            <li>Règlement intérieur + fiches de poste</li>
+            <li>1 recrutement accompagné/an</li>
+            <li>Suivi absences &amp; congés</li>
+          </ul>
+          <button class="btn-p" onclick="scrollContact()">Démarrer</button>
+        </div>
+        <div class="plan reveal d3">
+          <div class="pn">Premium</div>
+          <div class="pp">200 000 <small style="font-size:.95rem">FCFA</small></div>
+          <div class="pp-per">/mois – 20+ employés</div>
+          <ul class="pf">
+            <li>Consultations illimitées</li>
+            <li>Contrats &amp; avenants illimités</li>
+            <li>Accès direct (appel/WhatsApp)</li>
+            <li>2 recrutements inclus/an</li>
+            <li>Politique RH sur mesure</li>
+            <li>Audit RH annuel offert</li>
+          </ul>
+          <button class="btn-p" onclick="scrollContact()">Démarrer</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="srv-panel" id="panel-1">
+      <div class="panel-intro">
+        <div><div class="p-icon">🎯</div></div>
+        <div>
+          <h3 class="p-title">Recrutement &amp; Sélection</h3>
+          <p class="p-desc">Vous cherchez une vendeuse, une caissière, un responsable de salle, un comptable ? Nous rédigeons l'offre, diffusons, trions les CV, menons les entretiens de présélection et vous présentons le meilleur profil. Vous n'avez plus qu'à dire oui.</p>
+          <ul class="p-inc">
+            <li>Rédaction et diffusion de l'offre d'emploi</li>
+            <li>Tri des candidatures et présélection</li>
+            <li>Entretiens de présélection</li>
+            <li>Présentation des 2 à 3 meilleurs profils</li>
+            <li>Accompagnement à la décision finale</li>
+          </ul>
+        </div>
+      </div>
+      <div class="plans">
+        <div class="plan reveal">
+          <div class="pn">Pack Express</div>
+          <div class="pp">75 000 <small style="font-size:.95rem">FCFA</small></div>
+          <div class="pp-per">par recrutement – profil simple</div>
+          <ul class="pf">
+            <li>Rédaction &amp; diffusion de l'offre</li>
+            <li>Tri des candidatures</li>
+            <li>Présentation de 2 profils</li>
+            <li>Délai : 7 à 10 jours</li>
+            <li class="no">Entretiens approfondis</li>
+            <li class="no">Garantie de remplacement</li>
+          </ul>
+          <button class="btn-p" onclick="scrollContact()">Lancer le recrutement</button>
+        </div>
+        <div class="plan feat reveal d2">
+          <span class="plan-badge">Recommandé</span>
+          <div class="pn">Pack Sélection</div>
+          <div class="pp">150 000 <small style="font-size:.95rem">FCFA</small></div>
+          <div class="pp-per">par recrutement – profil intermédiaire</div>
+          <ul class="pf">
+            <li>Sourcing actif multi-canaux</li>
+            <li>Entretiens téléphoniques de présélection</li>
+            <li>Présentation de 3 profils avec rapport</li>
+            <li>Accompagnement à l'entretien final</li>
+            <li>Délai : 10 à 15 jours</li>
+            <li>Remplacement gratuit sous 30 jours</li>
+          </ul>
+          <button class="btn-p" onclick="scrollContact()">Lancer le recrutement</button>
+        </div>
+        <div class="plan reveal d3">
+          <div class="pn">Pack Complet</div>
+          <div class="pp">250 000 <small style="font-size:.95rem">FCFA</small></div>
+          <div class="pp-per">par recrutement – cadre ou manager</div>
+          <ul class="pf">
+            <li>Sourcing multi-canaux + réseau</li>
+            <li>Entretiens structurés compétences + fit</li>
+            <li>Tests de personnalité inclus</li>
+            <li>Dossier complet par finaliste</li>
+            <li>Négociation salariale assistée</li>
+            <li>Remplacement gratuit sous 60 jours</li>
+          </ul>
+          <button class="btn-p" onclick="scrollContact()">Lancer le recrutement</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="srv-panel" id="panel-2">
+      <div class="panel-intro">
+        <div><div class="p-icon">📄</div></div>
+        <div>
+          <h3 class="p-title">Rédaction CV &amp; Profil LinkedIn</h3>
+          <p class="p-desc">Un CV mal présenté, c'est une candidature à la poubelle. Nous rédigeons un CV professionnel qui attire l'œil des recruteurs ivoiriens et internationaux, et un profil LinkedIn qui vous rend visible et crédible.</p>
+          <ul class="p-inc">
+            <li>Analyse de votre parcours et de vos objectifs</li>
+            <li>Rédaction structurée et mise en forme professionnelle</li>
+            <li>Adaptation au secteur et au poste visé</li>
+            <li>Livraison en Word + PDF</li>
+          </ul>
+        </div>
+      </div>
+      <div class="plans">
+        <div class="plan reveal">
+          <div class="pn">CV Simple</div>
+          <div class="pp">15 000 <small style="font-size:.95rem">FCFA</small></div>
+          <div class="pp-per">livraison en 48h</div>
+          <ul class="pf">
+            <li>CV 1 page, design épuré</li>
+            <li>Rédaction à partir de vos informations</li>
+            <li>Format Word + PDF</li>
+            <li>1 révision incluse</li>
+            <li class="no">Lettre de motivation</li>
+            <li class="no">Profil LinkedIn</li>
+          </ul>
+          <button class="btn-p" onclick="scrollContact()">Commander mon CV</button>
+        </div>
+        <div class="plan feat reveal d2">
+          <span class="plan-badge">Le plus populaire</span>
+          <div class="pn">CV Pro + LinkedIn</div>
+          <div class="pp">35 000 <small style="font-size:.95rem">FCFA</small></div>
+          <div class="pp-per">livraison en 3 à 5 jours</div>
+          <ul class="pf">
+            <li>CV 1–2 pages, design premium</li>
+            <li>Entretien 30 min pour vous cerner</li>
+            <li>Lettre de motivation incluse</li>
+            <li>Optimisation profil LinkedIn</li>
+            <li>2 révisions incluses</li>
+            <li>Conseils de candidature offerts</li>
+          </ul>
+          <button class="btn-p" onclick="scrollContact()">Commander mon CV</button>
+        </div>
+        <div class="plan reveal d3">
+          <div class="pn">Pack Candidat Complet</div>
+          <div class="pp">60 000 <small style="font-size:.95rem">FCFA</small></div>
+          <div class="pp-per">livraison en 5 à 7 jours</div>
+          <ul class="pf">
+            <li>CV premium (2 déclinaisons)</li>
+            <li>Lettre de motivation personnalisée</li>
+            <li>Refonte complète LinkedIn</li>
+            <li>Guide de candidature sur mesure</li>
+            <li>Simulation d'entretien 45 min</li>
+            <li>Révisions illimitées (15 jours)</li>
+          </ul>
+          <button class="btn-p" onclick="scrollContact()">Commander mon CV</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="srv-panel" id="panel-3">
+      <div class="panel-intro">
+        <div><div class="p-icon">🚀</div></div>
+        <div>
+          <h3 class="p-title">Coaching Carrière &amp; Recherche d'Emploi</h3>
+          <p class="p-desc">Vous envoyez des CV sans retour ? Vous stressez à chaque entretien ? Vous ne savez pas comment négocier votre salaire ? Nos coachings sont des séances concrètes avec simulations, exercices et outils réutilisables immédiatement.</p>
+          <ul class="p-inc">
+            <li>Bilan de compétences et définition du projet professionnel</li>
+            <li>Stratégie de recherche d'emploi personnalisée</li>
+            <li>Entraînement aux entretiens en situation réelle</li>
+            <li>Travail sur la confiance et le personal branding</li>
+          </ul>
+        </div>
+      </div>
+      <div class="plans">
+        <div class="plan reveal">
+          <div class="pn">Séance Découverte</div>
+          <div class="pp">20 000 <small style="font-size:.95rem">FCFA</small></div>
+          <div class="pp-per">1 séance de 60 min</div>
+          <ul class="pf">
+            <li>Diagnostic complet de votre situation</li>
+            <li>Identification de vos blocages</li>
+            <li>Plan d'action personnalisé fourni</li>
+            <li>Présentiel (Abidjan) ou visio</li>
+            <li class="no">Suivi entre séances</li>
+            <li class="no">Simulation d'entretien</li>
+          </ul>
+          <button class="btn-p" onclick="scrollContact()">Réserver ma séance</button>
+        </div>
+        <div class="plan feat reveal d2">
+          <span class="plan-badge">Idéal pour trouver vite</span>
+          <div class="pn">Pack Boost</div>
+          <div class="pp">75 000 <small style="font-size:.95rem">FCFA</small></div>
+          <div class="pp-per">4 séances sur 1 mois</div>
+          <ul class="pf">
+            <li>4 séances coaching de 60 min</li>
+            <li>Stratégie recherche d'emploi complète</li>
+            <li>2 simulations d'entretien</li>
+            <li>Suivi WhatsApp entre les séances</li>
+            <li>Guide de négociation salariale</li>
+            <li>Bilan écrit fourni en fin de pack</li>
+          </ul>
+          <button class="btn-p" onclick="scrollContact()">Réserver</button>
+        </div>
+        <div class="plan reveal d3">
+          <div class="pn">Pack Transformation</div>
+          <div class="pp">130 000 <small style="font-size:.95rem">FCFA</small></div>
+          <div class="pp-per">8 séances sur 2 mois</div>
+          <ul class="pf">
+            <li>8 séances intensives de coaching</li>
+            <li>CV + LinkedIn offerts (inclus)</li>
+            <li>4 simulations d'entretien + débriefing</li>
+            <li>Stratégie de visibilité professionnelle</li>
+            <li>Suivi WhatsApp illimité</li>
+            <li>Accès au réseau partenaires recruteurs</li>
+          </ul>
+          <button class="btn-p" onclick="scrollContact()">Réserver</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="srv-panel" id="panel-4">
+      <div class="panel-intro">
+        <div><div class="p-icon">🎓</div></div>
+        <div>
+          <h3 class="p-title">Formations &amp; Ateliers Professionnels</h3>
+          <p class="p-desc">Nos ateliers pratiques sont disponibles en individuel, groupe ou inter-entreprises. Contenu adapté à votre niveau et objectifs. Idéal pour monter en compétences rapidement sur des sujets précis.</p>
+          <ul class="p-inc">
+            <li>Prise de parole et communication professionnelle</li>
+            <li>Leadership et management d'équipe</li>
+            <li>Gestion du stress et intelligence émotionnelle</li>
+            <li>RH de base pour managers non-RH</li>
+            <li>Développement personnel et confiance en soi</li>
+          </ul>
+        </div>
+      </div>
+      <div class="plans">
+        <div class="plan reveal">
+          <div class="pn">Atelier Individuel</div>
+          <div class="pp">30 000 <small style="font-size:.95rem">FCFA</small></div>
+          <div class="pp-per">par session de 3h</div>
+          <ul class="pf">
+            <li>Formation individuelle (1 personne)</li>
+            <li>Contenu personnalisé à vos objectifs</li>
+            <li>Support de cours fourni</li>
+            <li>Exercices pratiques en séance</li>
+            <li class="no">Suivi post-formation</li>
+            <li class="no">Attestation officielle</li>
+          </ul>
+          <button class="btn-p" onclick="scrollContact()">S'inscrire</button>
+        </div>
+        <div class="plan feat reveal d2">
+          <span class="plan-badge">Meilleur rapport qualité-prix</span>
+          <div class="pn">Atelier Groupe</div>
+          <div class="pp">15 000 <small style="font-size:.95rem">FCFA</small></div>
+          <div class="pp-per">par personne / groupe de 5 à 12</div>
+          <ul class="pf">
+            <li>Formation en groupe (5–12 personnes)</li>
+            <li>Thématique définie en amont</li>
+            <li>Support + ressources PDF</li>
+            <li>Exercices et cas pratiques</li>
+            <li>Attestation de participation</li>
+            <li>Suivi d'1 mois post-formation</li>
+          </ul>
+          <button class="btn-p" onclick="scrollContact()">S'inscrire</button>
+        </div>
+        <div class="plan reveal d3">
+          <div class="pn">Formation Corporate</div>
+          <div class="pp">Sur devis</div>
+          <div class="pp-per">équipe entreprise – demi-journée à 2 jours</div>
+          <ul class="pf">
+            <li>Programme entièrement personnalisé</li>
+            <li>Formateur senior dédié</li>
+            <li>Chez vous ou en salle partenaire</li>
+            <li>Supports pédagogiques complets</li>
+            <li>Attestations officielles individuelles</li>
+            <li>Rapport d'évaluation post-formation</li>
+          </ul>
+          <button class="btn-p" onclick="scrollContact()">Demander un devis</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="srv-panel" id="panel-5">
+      <div class="panel-intro">
+        <div><div class="p-icon">🌐</div></div>
+        <div>
+          <h3 class="p-title">Création de Site Vitrine Web</h3>
+          <p class="p-desc">Aujourd'hui, ne pas avoir de site internet c'est comme ne pas exister. Boutique, salon, agence, commerce — votre site vitrine vous donne une image professionnelle, génère de la visibilité et rassure vos clients 24h/24.</p>
+          <ul class="p-inc">
+            <li>Site moderne, rapide et responsive (mobile)</li>
+            <li>Nom de domaine et hébergement inclus (1ère année)</li>
+            <li>Optimisation SEO de base pour Google</li>
+            <li>Formulaire de contact et intégration réseaux sociaux</li>
+            <li>Livraison clé en main, sans jargon technique</li>
+          </ul>
+        </div>
+      </div>
+      <div class="plans">
+        <div class="plan reveal">
+          <div class="pn">Starter</div>
+          <div class="pp">150 000 <small style="font-size:.95rem">FCFA</small></div>
+          <div class="pp-per">livraison en 7 jours</div>
+          <ul class="pf">
+            <li>Site 1 à 3 pages (accueil, services, contact)</li>
+            <li>Design professionnel responsive</li>
+            <li>Nom de domaine + hébergement 1 an</li>
+            <li>Formulaire de contact</li>
+            <li class="no">SEO avancé</li>
+            <li class="no">Blog ou catalogue produits</li>
+          </ul>
+          <button class="btn-p" onclick="scrollContact()">Commander mon site</button>
+        </div>
+        <div class="plan feat reveal d2">
+          <span class="plan-badge">Le plus choisi</span>
+          <div class="pn">Business</div>
+          <div class="pp">300 000 <small style="font-size:.95rem">FCFA</small></div>
+          <div class="pp-per">livraison en 10 à 15 jours</div>
+          <ul class="pf">
+            <li>Site 4 à 6 pages personnalisé</li>
+            <li>Design premium + animations</li>
+            <li>Domaine + hébergement 1 an</li>
+            <li>SEO complet + Google My Business</li>
+            <li>Intégration WhatsApp Business</li>
+            <li>Formation pour gérer votre site</li>
+          </ul>
+          <button class="btn-p" onclick="scrollContact()">Commander mon site</button>
+        </div>
+        <div class="plan reveal d3">
+          <div class="pn">Premium</div>
+          <div class="pp">500 000 <small style="font-size:.95rem">FCFA</small></div>
+          <div class="pp-per">livraison en 15 à 21 jours</div>
+          <ul class="pf">
+            <li>Site complet avec blog ou catalogue</li>
+            <li>Design sur mesure (identité graphique)</li>
+            <li>SEO avancé + Analytics</li>
+            <li>Connexion réseaux sociaux</li>
+            <li>Maintenance 3 mois offerte</li>
+            <li>Support prioritaire 1 an</li>
+          </ul>
+          <button class="btn-p" onclick="scrollContact()">Commander mon site</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="approche">
+  <div class="s-inner">
+    <div class="ov">Notre méthode</div>
+    <h2 class="st stl">Une méthode simple en<br><em>quatre étapes concrètes</em></h2>
+    <p class="sl sll">Pas de procédures interminables. Nous allons droit au but, avec vous, dès le premier échange.</p>
+    <div class="steps">
+      <div class="stp reveal"><div class="stp-n">01</div><h4 class="stp-t">Premier échange gratuit</h4><p class="stp-d">Un appel ou RDV de 30 min pour comprendre votre besoin. Aucun engagement, aucun frais. Juste une conversation honnête pour voir si on peut vous aider.</p><div class="stp-bar"></div></div>
+      <div class="stp reveal d1"><div class="stp-n">02</div><h4 class="stp-t">Proposition sur mesure</h4><p class="stp-d">Un plan d'action clair, un calendrier et une tarification transparente. Vous savez exactement ce que vous payez et ce que vous obtenez, avant de signer quoi que ce soit.</p><div class="stp-bar"></div></div>
+      <div class="stp reveal d2"><div class="stp-n">03</div><h4 class="stp-t">Mise en œuvre rapide</h4><p class="stp-d">On se met au travail sans traîner. Chaque action est documentée et partagée avec vous. Vous suivez l'avancement en temps réel via WhatsApp ou email.</p><div class="stp-bar"></div></div>
+      <div class="stp reveal d3"><div class="stp-n">04</div><h4 class="stp-t">Résultats &amp; suivi</h4><p class="stp-d">On ne disparaît pas après livraison. On fait le point sur les résultats et on ajuste si nécessaire. Votre satisfaction est notre meilleure publicité.</p><div class="stp-bar"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="temoignages">
+  <div class="s-inner">
+    <div class="ov">Ils nous font confiance</div>
+    <h2 class="st">Ce que disent <em>nos clients</em></h2>
+    <div class="temo-wrap">
+      <div class="temo-track" id="ttrack">
+        <div class="temo-slide"><div class="temo-card"><div class="t-stars">★★★★★</div><div class="t-q">"</div><p class="t-txt">J'avais une boutique de prêt-à-porter mais je n'arrivais pas à garder mes vendeuses. IHSANE AGENCY a mis en place des contrats clairs et une mini politique de présence. Zéro problème avec mon personnel depuis.</p><div class="t-auth"><div class="t-av">FK</div><div><div class="t-name">Fatoumata K.</div><div class="t-role">Gérante boutique Mode, Cocody</div><span class="t-type">B2B</span></div></div></div></div>
+        <div class="temo-slide"><div class="temo-card"><div class="t-stars">★★★★★</div><div class="t-q">"</div><p class="t-txt">Mon CV faisait pitié même si mon parcours était solide. Après leur refonte, j'ai reçu 3 appels en une semaine. J'ai finalement signé dans une multinationale. Merci infiniment.</p><div class="t-auth"><div class="t-av">OA</div><div><div class="t-name">Oumar A.</div><div class="t-role">Responsable Logistique, Marcory</div><span class="t-type">B2C</span></div></div></div></div>
+        <div class="temo-slide"><div class="temo-card"><div class="t-stars">★★★★★</div><div class="t-q">"</div><p class="t-txt">On cherchait une assistante de direction depuis 2 mois sans succès. IHSANE AGENCY nous a présenté la candidate idéale en 10 jours. Professionnels, réactifs et honnêtes sur les profils présentés.</p><div class="t-auth"><div class="t-av">SN</div><div><div class="t-name">Serge N.</div><div class="t-role">Directeur, Agence de communication, Plateau</div><span class="t-type">B2B</span></div></div></div></div>
+        <div class="temo-slide"><div class="temo-card"><div class="t-stars">★★★★★</div><div class="t-q">"</div><p class="t-txt">J'avais peur des entretiens au point de refuser des opportunités. Après 4 séances, j'ai décroché le poste de chef de projet que je voulais depuis 2 ans. Je ne suis plus la même personne en entretien.</p><div class="t-auth"><div class="t-av">AB</div><div><div class="t-name">Awa B.</div><div class="t-role">Cheffe de projet IT, Abidjan</div><span class="t-type">B2C</span></div></div></div></div>
+        <div class="temo-slide"><div class="temo-card"><div class="t-stars">★★★★★</div><div class="t-q">"</div><p class="t-txt">Mon salon avait 6 coiffeuses mais aucun cadre RH. On m'a aidé avec les fiches de poste, les horaires et le processus de recrutement. Maintenant mon équipe sait exactement ce qu'on attend d'elle.</p><div class="t-auth"><div class="t-av">MC</div><div><div class="t-name">Marie-Claire C.</div><div class="t-role">Gérante Salon de beauté, Yopougon</div><span class="t-type">B2B</span></div></div></div></div>
+        <div class="temo-slide"><div class="temo-card"><div class="t-stars">★★★★★</div><div class="t-q">"</div><p class="t-txt">Je cherchais un emploi depuis 8 mois. Le Pack Transformation a tout changé. CV refait, entretiens simulés, LinkedIn activé. Au bout du 2e mois, j'avais signé. Investissement rentabilisé dès le premier salaire.</p><div class="t-auth"><div class="t-av">KS</div><div><div class="t-name">Koffi S.</div><div class="t-role">Analyste financier, Treichville</div><span class="t-type">B2C</span></div></div></div></div>
+        <div class="temo-slide"><div class="temo-card"><div class="t-stars">★★★★★</div><div class="t-q">"</div><p class="t-txt">On a confié notre site web à IHSANE AGENCY. Livré en 12 jours, design moderne et on apparaît maintenant sur Google. Nos clients disent qu'ils ont trouvé le restaurant en cherchant sur internet.</p><div class="t-auth"><div class="t-av">JD</div><div><div class="t-name">Jean-Daniel A.</div><div class="t-role">Gérant restaurant, Angré</div><span class="t-type">B2B</span></div></div></div></div>
+        <div class="temo-slide"><div class="temo-card"><div class="t-stars">★★★★★</div><div class="t-q">"</div><p class="t-txt">Je n'avais jamais osé négocier mon salaire. Après une séance de coaching, j'ai demandé 25% de plus. Mon employeur a accepté. Je regrette juste de ne pas avoir fait ça plus tôt.</p><div class="t-auth"><div class="t-av">NB</div><div><div class="t-name">Nadia B.</div><div class="t-role">Responsable RH junior, Abidjan</div><span class="t-type">B2C</span></div></div></div></div>
+        <div class="temo-slide"><div class="temo-card"><div class="t-stars">★★★★★</div><div class="t-q">"</div><p class="t-txt">Ils ont formé mes 3 managers en 2 jours sur le leadership. Depuis, l'ambiance a changé. Moins de conflits, plus d'initiatives. La formation Corporate vaut vraiment son coût, je recommande.</p><div class="t-auth"><div class="t-av">PT</div><div><div class="t-name">Patrick T.</div><div class="t-role">PDG PME agroalimentaire, Abidjan</div><span class="t-type">B2B</span></div></div></div></div>
+        <div class="temo-slide"><div class="temo-card"><div class="t-stars">★★★★★</div><div class="t-q">"</div><p class="t-txt">Je suis jeune diplômée et je ne savais pas par où commencer. On m'a aidé à rédiger mon CV, à définir ma stratégie et à préparer mes entretiens. J'ai trouvé mon premier emploi en 6 semaines.</p><div class="t-auth"><div class="t-av">LK</div><div><div class="t-name">Laure K.</div><div class="t-role">Juriste débutante, Grand-Bassam</div><span class="t-type">B2C</span></div></div></div></div>
+      </div>
+    </div>
+    <div class="temo-nav">
+      <div class="t-dots" id="tdots"></div>
+      <div class="t-arrows">
+        <button class="t-btn" onclick="tMove(-1)">←</button>
+        <button class="t-btn" onclick="tMove(1)">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tarifs">
+  <div class="s-inner">
+    <div class="tarifs-top">
+      <div>
+        <div class="ov">Transparence tarifaire</div>
+        <h2 class="st stl">Des prix <em>clairs,</em><br>sans surprise</h2>
+      </div>
+      <p class="tarif-msg">Nous croyons que les petites structures méritent un accompagnement <strong>professionnel et abordable</strong>. Tous nos tarifs sont indicatifs. Chaque besoin est unique — <strong>demandez un devis personnalisé</strong> et on trouvera ensemble la formule qui correspond à votre budget et vos objectifs.</p>
+    </div>
+    <div class="tc-grid">
+      <div class="tc reveal"><div class="tc-from">À partir de</div><div class="tc-price">15 000 FCFA</div><div class="tc-name">Rédaction de CV</div><div class="tc-desc">Livrée en 48h avec format Word + PDF. 3 plans disponibles.</div><button class="tc-lnk" onclick="goService(2)">Voir les plans →</button></div>
+      <div class="tc reveal d1"><div class="tc-from">À partir de</div><div class="tc-price">20 000 FCFA</div><div class="tc-name">Coaching Carrière</div><div class="tc-desc">Séance individuelle ou pack complet 8 séances avec suivi inclus.</div><button class="tc-lnk" onclick="goService(3)">Voir les plans →</button></div>
+      <div class="tc reveal d2"><div class="tc-from">À partir de</div><div class="tc-price">50 000 FCFA</div><div class="tc-name">Support RH / mois</div><div class="tc-desc">Votre RH externalisé à prix accessible pour TPE/PME.</div><button class="tc-lnk" onclick="goService(0)">Voir les plans →</button></div>
+      <div class="tc reveal d3"><div class="tc-from">À partir de</div><div class="tc-price">75 000 FCFA</div><div class="tc-name">Recrutement</div><div class="tc-desc">Diffusion, présélection, entretiens et présentation du candidat idéal.</div><button class="tc-lnk" onclick="goService(1)">Voir les plans →</button></div>
+      <div class="tc reveal"><div class="tc-from">À partir de</div><div class="tc-price">15 000 FCFA</div><div class="tc-name">Formations &amp; Ateliers</div><div class="tc-desc">Par personne en groupe. Corporate sur devis personnalisé.</div><button class="tc-lnk" onclick="goService(4)">Voir les plans →</button></div>
+      <div class="tc reveal d1"><div class="tc-from">À partir de</div><div class="tc-price">150 000 FCFA</div><div class="tc-name">Site Vitrine Web</div><div class="tc-desc">Site professionnel clé en main avec domaine + hébergement inclus.</div><button class="tc-lnk" onclick="goService(5)">Voir les plans →</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="s-inner">
+    <div class="ov">Parlons de votre projet</div>
+    <h2 class="st stl">Contactez-nous.<br><em>On vous répond sous 24h.</em></h2>
+    <p class="sl sll">Premier échange toujours gratuit. Décrivez votre besoin et on revient vers vous avec une proposition concrète.</p>
+    <div class="contact-grid">
+      <div>
+        <div class="c-item"><div class="c-lbl">Localisation</div><div class="c-val">Abidjan, Côte d'Ivoire<br><small style="color:var(--gris-texte);font-size:.76rem">Présentiel &amp; disponible à distance</small></div></div>
+        <div class="c-item"><div class="c-lbl">Email</div><div class="c-val"><a href="mailto:contact@ihsane-agency.ci">contact@ihsane-agency.ci</a></div></div>
+        <div class="c-item"><div class="c-lbl">WhatsApp / Téléphone</div><div class="c-val"><a href="tel:+225XXXXXXXXX">+225 XX XX XX XX XX</a></div></div>
+        <div class="c-item"><div class="c-lbl">Disponibilité</div><div class="c-val">Lun – Ven : 8h00 – 18h00<br><small style="color:var(--gris-texte);font-size:.76rem">Samedi sur rendez-vous</small></div></div>
+        <div class="c-item"><div class="c-lbl">Réseaux sociaux</div><div class="c-val"><a href="#">LinkedIn</a> &nbsp;·&nbsp; <a href="#">Instagram</a> &nbsp;·&nbsp; <a href="#">Facebook</a></div></div>
+      </div>
+      <div>
+        <div class="f-row">
+          <div class="fg"><label>Prénom &amp; Nom *</label><input type="text" placeholder="Votre nom complet"></div>
+          <div class="fg"><label>Entreprise / Structure</label><input type="text" placeholder="Optionnel"></div>
+        </div>
+        <div class="f-row">
+          <div class="fg"><label>Email *</label><input type="email" placeholder="vous@example.com"></div>
+          <div class="fg"><label>Téléphone / WhatsApp</label><input type="tel" placeholder="+225 XX XX XX XX XX"></div>
+        </div>
+        <div class="fg">
+          <label>Vous êtes *</label>
+          <select>
+            <option value="">Choisissez votre profil</option>
+            <option>Une entreprise — Support RH externalisé</option>
+            <option>Une entreprise — Besoin de recrutement</option>
+            <option>Une entreprise — Formation / atelier</option>
+            <option>Une entreprise — Site vitrine web</option>
+            <option>Un candidat — Rédaction CV / LinkedIn</option>
+            <option>Un candidat — Coaching carrière</option>
+            <option>Un candidat — Préparation entretien</option>
+            <option>Autre demande</option>
+          </select>
+        </div>
+        <div class="fg"><label>Votre message *</label><textarea placeholder="Décrivez brièvement votre situation, votre besoin ou vos questions. Plus vous êtes précis(e), mieux on peut vous aider."></textarea></div>
+        <button class="f-sub" id="fsub">Envoyer ma demande — Premier échange gratuit →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft">
+    <div class="ft-logo">IHSANE<span>.</span>AGENCY</div>
+    <p class="ft-copy">© 2025 IHSANE AGENCY — Support RH &amp; Coaching Professionnel · Abidjan, Côte d'Ivoire</p>
+    <ul class="ft-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#tarifs">Tarifs</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#">Mentions légales</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mob').classList.toggle('open')}
+
+function showPanel(i){
+  document.querySelectorAll('.srv-tab').forEach((t,idx)=>t.classList.toggle('active',idx===i));
+  document.querySelectorAll('.srv-panel').forEach((p,idx)=>p.classList.toggle('active',idx===i));
+}
+
+function goService(i){
+  showPanel(i);
+  document.getElementById('services').scrollIntoView({behavior:'smooth'});
+}
+
+function scrollContact(){document.getElementById('contact').scrollIntoView({behavior:'smooth'})}
+
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('in');obs.unobserve(el.target)}})},{threshold:.1});
+reveals.forEach(el=>obs.observe(el));
+
+// Carousel
+const track=document.getElementById('ttrack');
+const slides=track.querySelectorAll('.temo-slide');
+const dotsEl=document.getElementById('tdots');
+let cur=0;
+const sv=()=>window.innerWidth<900?1:3;
+const total=()=>Math.ceil(slides.length/sv());
+
+function buildDots(){
+  dotsEl.innerHTML='';
+  for(let i=0;i<total();i++){
+    const d=document.createElement('button');
+    d.className='t-dot'+(i===0?' active':'');
+    d.onclick=()=>goTo(i);
+    dotsEl.appendChild(d);
+  }
+  slides.forEach(s=>{s.style.minWidth=(track.parentElement.offsetWidth/sv())+'px'});
+}
+
+function goTo(idx){
+  const t=total();
+  cur=Math.max(0,Math.min(idx,t-1));
+  const w=track.parentElement.offsetWidth;
+  track.style.transform='translateX(-'+(cur*w)+'px)';
+  dotsEl.querySelectorAll('.t-dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+}
+
+function tMove(dir){goTo(cur+dir)}
+buildDots();
+window.addEventListener('resize',()=>{buildDots();goTo(Math.min(cur,total()-1))});
+setInterval(()=>goTo((cur+1)%total()),5000);
+
+document.getElementById('fsub').addEventListener('click',function(){
+  this.textContent='✓ Message envoyé — On vous contacte sous 24h';
+  this.style.background='#2a7d5a';this.style.color='#fff';
+  setTimeout(()=>{this.textContent='Envoyer ma demande — Premier échange gratuit →';this.style.background='';this.style.color=''},4000);
+});
+</script>
+</body>
+</html>
